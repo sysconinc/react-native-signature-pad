@@ -120,6 +120,7 @@ export default class SignaturePad extends Component {
   render = () => {
     return (
         <WebView automaticallyAdjustContentInsets={false}
+                 originWhitelist={['*']}
                  onNavigationStateChange={this._onNavigationChange}
                  onMessage={this._onMessage}
                  renderError={this._renderError}
