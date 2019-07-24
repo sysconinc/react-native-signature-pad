@@ -1,12 +1,7 @@
-'use strict';
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  ViewPropTypes,
-  StyleSheet,
-} from 'react-native';
-import { WebView } from 'react-native-webview';
+import {StyleSheet, View, ViewPropTypes} from 'react-native';
+import {WebView} from 'react-native-webview';
 
 import htmlContent from './injectedHtml';
 import injectedSignaturePad from './injectedJavaScript/signaturePad';
@@ -14,7 +9,7 @@ import injectedApplication from './injectedJavaScript/application';
 import injectedErrorHandler from './injectedJavaScript/errorHandler';
 import injectedExecuteNativeFunction from './injectedJavaScript/executeNativeFunction';
 
-class SignaturePad extends Component {
+export default class SignaturePad extends Component {
 
   static propTypes = {
     defaultHeight: PropTypes.number,
@@ -125,7 +120,6 @@ class SignaturePad extends Component {
   render = () => {
     return (
         <WebView automaticallyAdjustContentInsets={false}
-                 useWebKit={false}
                  onNavigationStateChange={this._onNavigationChange}
                  onMessage={this._onMessage}
                  renderError={this._renderError}
@@ -137,5 +131,3 @@ class SignaturePad extends Component {
     )
   };
 }
-
-module.exports = SignaturePad;
