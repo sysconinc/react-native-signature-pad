@@ -15,7 +15,8 @@ var content = (penColor, backgroundColor, dataURL, defaultHeight, defaultWidth) 
 
     var finishedStroke = function(base64DataUrl) {
        executeNativeFunction('finishedStroke', {base64DataUrl: base64DataUrl});
-       window.postMessage(JSON.stringify({ base64DataUrl: base64DataUrl }));
+       /* window.postMessage(JSON.stringify({ base64DataUrl: base64DataUrl }));
+       window.ReactNativeWebView.postMessage(JSON.stringify({ base64DataUrl: base64DataUrl })); */
     };
 
     var enableSignaturePadFunctionality = function () {
